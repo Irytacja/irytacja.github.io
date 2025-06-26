@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SQ2JDM – Mirek | JDM Ham Radio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16161a">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: linear-gradient(135deg, #15172b 0%, #1e243a 100%);
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      overflow: hidden;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding-bottom: 45px;
+    }
+    h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: 3rem;
+      letter-spacing: 3px;
+      margin-bottom: 0.15em;
+      background: linear-gradient(90deg, #6fffcc, #2fbfff, #ff00b8 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 0.7em 0;
+      letter-spacing: 1.5px;
+      color: #aeefff;
+      text-shadow: 0 1px 14px #02e3ff44;
+    }
+    .callsign {
+      font-size: 2rem;
+      letter-spacing: 4px;
+      margin-top: 0.3em;
+      background: linear-gradient(90deg, #2fbfff, #fff, #ff00b8 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Orbitron', monospace;
+      text-shadow: 0 2px 10px #aeefff55;
+    }
+    .tagline {
+      font-size: 1.13rem;
+      letter-spacing: 1px;
+      margin-bottom: 1.5em;
+      color: #ccc;
+      min-height: 30px;
+      transition: color 0.5s;
+    }
+    .century {
+      color: #ff00b8;
+      font-weight: 700;
+      background: rgba(255,0,184,0.09);
+      border-radius: 8px;
+      padding: 4px 12px;
+      display: inline-block;
+      margin-top: 9px;
+      margin-bottom: 13px;
+      font-size: 1.14em;
+      letter-spacing: 1.1px;
+      box-shadow: 0 2px 12px #ff00b833;
+    }
+    .license, .grid {
+      color: #6fffcc;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      background: rgba(45,255,255,0.08);
+      border-radius: 8px;
+      padding: 2px 10px;
+      display: inline-block;
+      margin: 7px 6px 0 6px;
+      font-size: 1.01em;
+    }
+    .details {
+      margin-top: 1.4em;
+      font-size: 1.08rem;
+      color: #e1e1e1;
+      opacity: .91;
+      line-height: 1.7;
+      letter-spacing: 1px;
+      margin-bottom: 1.4em;
+    }
+    .equipment-section {
+      margin: 0 auto 1.6em auto;
+      background: rgba(40,44,60,0.92);
+      border: 2px solid #09e0c7;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px 0 #222b;
+      padding: 1.2em 1.8em 1.1em 1.8em;
+      max-width: 500px;
+      display: inline-block;
+    }
+    .equip-title {
+      font-size: 1.1em;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      color: #6fffcc;
+      margin-bottom: .55em;
+    }
+    .equip-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .equip-list li {
+      font-size: 1.08em;
+      letter-spacing: .8px;
+      padding: 2px 0 2px 0;
+      color: #fff;
+      text-align: left;
+    }
+    .equip-list .radio {
+      color: #2fbfff;
+      font-weight: 600;
+    }
+    .equip-list .car {
+      color: #ff00b8;
+      font-weight: 600;
+    }
+    .footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      font-size: 0.92rem;
+      color: #59cfffcc;
+      opacity: .7;
+      text-align: center;
+      font-family: 'Orbitron', monospace;
+      letter-spacing: 1px;
+      z-index: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .15;
+      background: repeating-linear-gradient(135deg,#06e0ff33 0 2px,transparent 2px 28px);
+      animation: drift 9s linear infinite alternate;
+      border-radius: 0 0 100vw 100vw / 0 0 15vw 15vw;
+    }
+    @keyframes drift {
+      0% { background-position: 0 0; }
+      100% { background-position: 120px 48px; }
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .callsign { font-size: 1.22rem; }
+      .container { padding: 12px 0 34px 0; }
+      .details { font-size: 0.98rem; }
+      .equipment-section { padding: 1em .9em .9em .9em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>SQ2JDM</h1>
+    <div class="callsign">Mirek <span style="font-size:1.1rem;font-weight:600;color:#ff00b8;">| JDM Ham</span></div>
+    <h2>Ham Radio • Japanese Style</h2>
+    <div class="tagline" id="tagline">On air with luxury & JDM passion!</div>
+    
+    <div class="century">Proud owner of a 2000 Toyota Century GZG50</div>
+    
+    <div>
+      <span class="license">Licensed: 2025-06-26</span>
+      <span class="grid">Grid: JO94hi</span>
+    </div>
+    
+    <div class="details">
+      Based in Gdańsk, Poland – sometimes mobile, always in JDM style.<br>
+      <span style="color:#2fbfff;font-weight:600;">Bands:</span> HF • VHF • UHF<br>
+      <span style="color:#ff00b8">#StayJDM</span> <span style="color:#aeefff">#HamSpirit</span>
+    </div>
+    
+    <div class="equipment-section">
+      <div class="equip-title">Equipment</div>
+      <ul class="equip-list">
+        <li class="radio">Xiegu G90 (HF SDR Transceiver)</li>
+        <li class="radio">Yaesu FT-70D (VHF/UHF Handheld)</li>
+        <li class="car">Toyota Century GZG50 (2000, JDM V12)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    &copy; 2025 SQ2JDM | Made by Mirek for true JDM & ham radio lovers 🚗📡
+  </div>
+  <script>
+    // Dynamic tagline rotator
+    const taglines = [
+      "On air with luxury & JDM passion!",
+      "CQ CQ – it's SQ2JDM calling from the Century.",
+      "Toyota Century GZG50 – pure Japanese luxury, now on the air.",
+      "From Gdańsk to the world – JDM power, ham spirit.",
+      "Rolling in a V12, talking on HF.",
+      "HF, VHF, UHF – and a slice of Japanese style.",
+      "SQ2JDM – radios, cars, and good vibes only.",
+      "Century isn't just a car – it's a way of life (and radio).",
+      "Always JDM, always on the air!"
+    ];
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx+1)%taglines.length;
+      document.getElementById("tagline").textContent = taglines[idx];
+    }, 3400);
+  </script>
+</body>
+</html>
