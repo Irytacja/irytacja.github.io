@@ -55,28 +55,30 @@
     }
     /* Tagline rotator */
     .tagline-rotator {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 30px;
       position: relative;
-      overflow: hidden;
-      margin-bottom: 1.5em;
-      min-height: 30px;
       width: 100%;
       max-width: 520px;
+      height: 1.8em; /* zapewnia miejsce na najwyższy tekst */
+      margin-bottom: 1.5em;
+      min-height: 1.8em;
+      line-height: 1.8em;
+      overflow: hidden;
+      display: block;
     }
     .tagline-rotator span {
       position: absolute;
-      width: 100%;
       left: 0;
+      top: 0;
+      width: 100%;
       opacity: 0;
       color: #ccc;
       font-size: 1.13rem;
       letter-spacing: 1px;
+      line-height: 1.8em;
       transition: color 0.5s;
       animation: rotateTaglines 27.2s linear infinite 0s;
-      /* 27.2s = 8*3.4s + (optional pause), if you have 8 taglines, each 3.4s */
+      pointer-events: none;
+      user-select: none;
     }
     .tagline-rotator span:nth-child(1) { animation-delay: 0s; }
     .tagline-rotator span:nth-child(2) { animation-delay: 3.4s; }
@@ -135,6 +137,7 @@
       padding: 1.2em 1.8em 1.1em 1.8em;
       max-width: 340px;
       display: inline-block;
+      overflow: visible;
     }
     .equip-title {
       font-size: 1.1em;
@@ -162,6 +165,23 @@
     .equip-list .car {
       color: #ff00b8;
       font-weight: 600;
+    }
+    .antenna-photo {
+      width: 96%;
+      max-width: 340px;
+      margin: 14px 0 4px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px #05e0ff33;
+      border: 2px solid #2fbfff55;
+      display: block;
+    }
+    .antenna-caption {
+      color: #aeefff;
+      font-size: 0.97em;
+      text-align: center;
+      margin-bottom: 2px;
+      opacity: .85;
+      letter-spacing: .5px;
     }
     .contest-call {
       font-size: 1.08em;
@@ -218,23 +238,6 @@
       animation: drift 9s linear infinite alternate;
       border-radius: 0 0 100vw 100vw / 0 0 15vw 15vw;
     }
-.antenna-photo {
-  width: 96%;
-  max-width: 340px;
-  margin: 14px 0 4px 0;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px #05e0ff33;
-  border: 2px solid #2fbfff55;
-  display: block;
-}
-.antenna-caption {
-  color: #aeefff;
-  font-size: 0.97em;
-  text-align: center;
-  margin-bottom: 2px;
-  opacity: .85;
-  letter-spacing: .5px;
-}
     @keyframes drift {
       0% { background-position: 0 0; }
       100% { background-position: 120px 48px; }
@@ -247,6 +250,7 @@
       .equipment-section { padding: 1em .9em .9em .9em; }
       .footer { font-size: 0.81rem;}
       .flags-section { font-size: 0.8em;}
+      .tagline-rotator { font-size: 0.98rem; height: 1.4em; line-height: 1.4em; min-height: 1.4em;}
     }
   </style>
 </head>
@@ -284,8 +288,8 @@
         <li class="radio">Xiegu G90</li>
         <li class="car">Toyota Century GZG50 (2000, JDM V12)</li>
       </ul>
-  <img src="image.png" alt="SQ2JDM Antenna" class="antenna-photo">
-  <div class="antenna-caption">My HF antenna in Gdańsk (2025)</div>
+      <img src="image.png" alt="SQ2JDM Antenna" class="antenna-photo">
+      <div class="antenna-caption">My HF antenna in Gdańsk (2025)</div>
     </div>
     <div class="contest-call">
       During contests I use the callsign <b>SQ0Y</b>.
